@@ -12,7 +12,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// If the chili is topped with cheese
         /// </summary>
-        public bool Cheese
+        public bool Cheese//property
         {
             get { return cheese; }
             set { cheese = value; }
