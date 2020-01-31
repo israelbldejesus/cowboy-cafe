@@ -4,16 +4,16 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
-    public class AngryChicken
+    public class TrailBurger
     {
         /// <summary>
-        /// Return the price of the AngryChicken
+        /// Return the price of the Trailburger
         /// </summary>
         public double Price
         {
             get
             {
-                return 5.99;
+                return 4.50;
             }
         }
 
@@ -24,7 +24,7 @@ namespace CowboyCafe.Data
         {
             get
             {
-                return 190;
+                return 288;
             }
         }
 
@@ -39,10 +39,25 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// Sets/Returns the wether there will be a bread.
+        /// Sets/Returns the wether there will be a bun.
         /// </summary>
-        public bool Bread { get; set; } = true;//this is the same as the pickle, creating the backup variable.
+        public bool Bun { get; set; } = true;//this is the same as the pickle, creating the backup variable.
         //This is known as sintactical sugar. This is very useful if you only need a get/set with nothing fancy to it.
+
+        /// <summary>
+        /// Sets/Returns the wether there will be ketchup.
+        /// </summary>
+        public bool Ketchup { get; set; } = true;
+
+        /// <summary>
+        /// Sets/Returns the wether there will be mustard.
+        /// </summary>
+        public bool Mustard { get; set; } = true;
+
+        /// <summary>
+        /// Sets/Returns the wether there will be cheese.
+        /// </summary>
+        public bool Cheese { get; set; } = true;
 
         /// <summary>
         /// Special instructions for the preparation of the the chicken sandwich.
@@ -53,8 +68,11 @@ namespace CowboyCafe.Data
             {
                 List<string> instructions = new List<string>();
 
-                if (!Bread) { instructions.Add("hold bread"); }
+                if (!Bun) { instructions.Add("hold bun"); }
                 if (!pickle) { instructions.Add("hold pickle"); }//I can use either pickle or Pickle
+                if (!Cheese) { instructions.Add("hold cheese"); }
+                if (!Mustard) { instructions.Add("hold mustard"); }
+                if (!Ketchup) { instructions.Add("hold ketchup"); }
 
                 return instructions;
             }

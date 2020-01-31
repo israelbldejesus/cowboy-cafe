@@ -4,16 +4,16 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
-    public class AngryChicken
+    public class PecosPulledPork
     {
         /// <summary>
-        /// Return the price of the AngryChicken
+        /// Return the price of the Pulled Pork
         /// </summary>
         public double Price
         {
             get
             {
-                return 5.99;
+                return 5.88;
             }
         }
 
@@ -24,7 +24,7 @@ namespace CowboyCafe.Data
         {
             get
             {
-                return 190;
+                return 528;
             }
         }
 
@@ -45,7 +45,7 @@ namespace CowboyCafe.Data
         //This is known as sintactical sugar. This is very useful if you only need a get/set with nothing fancy to it.
 
         /// <summary>
-        /// Special instructions for the preparation of the the chicken sandwich.
+        /// Special instructions for the preparation of the the pulled pork.
         /// </summary>
         public List<string> SpecialInstructions
         {
