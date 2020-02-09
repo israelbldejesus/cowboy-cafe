@@ -1,15 +1,30 @@
-﻿using System;
+﻿/*
+
+* Author: Israel B. Lopez De Jesus
+
+* Edited by: Israel B. Lopez De Jesus
+
+* Class name: DakotaDoubleBurger
+
+* Purpose: Hold the ingredients, price, and calorie of the entree DakotaDoubleBurger
+
+*/
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace CowboyCafe.Data
 {
-    public class DakotaDoubleBurger
+    /// <summary>
+    /// The Class which contains the entree DakotDoubleBurger
+    /// </summary>
+    public class DakotaDoubleBurger : Entree
     {
         /// <summary>
         /// Return the price of the Dakota Double Burger
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -20,7 +35,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Return the calories of the entree.
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -78,7 +93,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Special instructions for the preparation of the the double burger.
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

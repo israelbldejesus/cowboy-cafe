@@ -4,9 +4,9 @@
 
 * Edited by: Israel B. Lopez De Jesus
 
-* Class name: Side
+* Class name: Entree
 
-* Purpose: The base class for all the sides.
+* Purpose: Base class for all the entrees
 
 */
 
@@ -17,23 +17,25 @@ using System.Text;
 namespace CowboyCafe.Data
 {
     /// <summary>
-    /// A base class representing a side
+    /// A base calss representing an entree.
     /// </summary>
-    public abstract class Side
+    public abstract class Entree
     {
-        /// <summary>
-        /// Gets the size of the entree
-        /// </summary>
-        public virtual Size Size { get; set; }
-
         /// <summary>
         /// Gets the price of the side
         /// </summary>
         public abstract double Price { get; }
 
         /// <summary>
-        /// Gets the calories of the entree
+        /// Gets the calories of the entree.
         /// </summary>
         public abstract uint Calories { get; }
+
+        /// <summary>
+        /// Gets the special instructions of the entree.
+        /// </summary>
+        public abstract List<string> SpecialInstructions { get;  }
+
+
     }
 }
