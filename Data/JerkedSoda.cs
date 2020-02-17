@@ -10,7 +10,12 @@ namespace CowboyCafe.Data
     public class JerkedSoda : Drink
     {
         /// <summary>
-        /// The calories for the drink Water
+        /// Contains the flavour of the drink.
+        /// </summary>
+        SodaFlavor Flavor;
+
+        /// <summary>
+        /// The calories for the drink JerkedSoda
         /// </summary>
         public override uint Calories
         {
@@ -19,11 +24,11 @@ namespace CowboyCafe.Data
                 switch (Size)
                 {
                     case Size.Small:
-                        return 0;
+                        return 110;
                     case Size.Medium:
-                        return 0;
+                        return 146;
                     case Size.Large:
-                        return 0;
+                        return 198;
                     default:
                         throw new NotImplementedException();
                 }
@@ -31,7 +36,7 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// The price for the drink Water
+        /// The price for the drink JerkedSoda
         /// </summary>
         public override double Price
         {
@@ -40,21 +45,16 @@ namespace CowboyCafe.Data
                 switch (Size)
                 {
                     case Size.Small:
-                        return 0.12;
+                        return 1.59;
                     case Size.Medium:
-                        return 0.12;
+                        return 2.10;
                     case Size.Large:
-                        return 0.12;
+                        return 2.59;
                     default:
                         throw new NotImplementedException();
                 }
             }
         }
-
-        /// <summary>
-        /// This will retun/set weather the Drink will have a Lamon.
-        /// </summary>
-        public bool Lemon { get; set; } = true;
 
         /// <summary>
         /// This will return the Special Isnnstructions for the Drink.
@@ -65,7 +65,6 @@ namespace CowboyCafe.Data
             {
                 List<string> inst = new List<string>();
 
-                if (Lemon) inst.Add("Add Lemon");
                 if (Ice) inst.Add("Hold Ice");
 
                 return inst;
