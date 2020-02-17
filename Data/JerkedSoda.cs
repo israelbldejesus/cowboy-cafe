@@ -12,7 +12,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Contains the flavour of the drink.
         /// </summary>
-        SodaFlavor Flavor;
+        public SodaFlavor Flavor { get; set; }
 
         /// <summary>
         /// The calories for the drink JerkedSoda

@@ -10,6 +10,16 @@ namespace CowboyCafe.Data
     public class TexasTea : Drink
     {
         /// <summary>
+        /// This will retun/set weather the Drink will be sweet.
+        /// </summary>
+        public bool Sweet { get; set; } = true;
+
+        /// <summary>
+        /// This will retun/set weather the Drink will have lemon.
+        /// </summary>
+        public bool Lemon { get; set; } = false;
+
+        /// <summary>
         /// The calories for the drink TexasTea
         /// </summary>
         public override uint Calories
@@ -19,11 +29,23 @@ namespace CowboyCafe.Data
                 switch (Size)
                 {
                     case Size.Small:
-                        return 3;
+                        if (!Sweet)
+                        {
+                            return 10 / 2;
+                        }
+                        return 10;
                     case Size.Medium:
-                        return 5;
+                        if (!Sweet)
+                        {
+                            return 22 / 2;
+                        }
+                        return 22;
                     case Size.Large:
-                        return 7;
+                        if (!Sweet)
+                        {
+                            return 36 / 2;
+                        }
+                        return 36;
                     default:
                         throw new NotImplementedException();
                 }
@@ -40,31 +62,16 @@ namespace CowboyCafe.Data
                 switch (Size)
                 {
                     case Size.Small:
-                        return 0.60;
+                        return 1.00;
                     case Size.Medium:
-                        return 1.10;
+                        return 1.50;
                     case Size.Large:
-                        return 1.60;
+                        return 2.00;
                     default:
                         throw new NotImplementedException();
                 }
             }
         }
-
-        /// <summary>
-        /// This will retun/set weather the Drink will have Cream.
-        /// </summary>
-        public bool RoomForCream { get; set; } = false;
-
-        /// <summary>
-        /// This will retun/set weather the Drink will be decaf.
-        /// </summary>
-        public bool Decaf { get; set; } = false;
-
-        /// <summary>
-        /// This will retun/set weather the Drink will have Cream.
-        /// </summary>
-        public bool Ice { get; set; } = false;
 
         /// <summary>
         /// This will return the Special Isnnstructions for the Drink.
@@ -75,8 +82,8 @@ namespace CowboyCafe.Data
             {
                 List<string> inst = new List<string>();
 
-                if (RoomForCream) inst.Add("Room for Cream");
-                if (Ice) inst.Add("Add Ice");
+                if (Lemon) inst.Add("Add Lemon");
+                if (Ice) inst.Add("Hold Ice");
 
                 return inst;
             }
