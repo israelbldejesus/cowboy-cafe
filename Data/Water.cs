@@ -10,6 +10,11 @@ namespace CowboyCafe.Data
     public class Water : Drink
     {
         /// <summary>
+        /// This will retun/set weather the Drink will have a Lamon.
+        /// </summary>
+        public bool Lemon { get; set; } = false;
+
+        /// <summary>
         /// The calories for the drink Water
         /// </summary>
         public override uint Calories
@@ -50,12 +55,7 @@ namespace CowboyCafe.Data
                 }
             }
         }
-
-        /// <summary>
-        /// This will retun/set weather the Drink will have a Lamon.
-        /// </summary>
-        public bool Lemon { get; set; } = true;
-
+        
         /// <summary>
         /// This will return the Special Isnnstructions for the Drink.
         /// </summary>
@@ -66,7 +66,7 @@ namespace CowboyCafe.Data
                 List<string> inst = new List<string>();
 
                 if (Lemon) inst.Add("Add Lemon");
-                if (Ice) inst.Add("Hold Ice");
+                if (!Ice) inst.Add("Hold Ice");
 
                 return inst;
             }

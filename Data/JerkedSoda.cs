@@ -65,7 +65,7 @@ namespace CowboyCafe.Data
             {
                 List<string> inst = new List<string>();
 
-                if (Ice) inst.Add("Hold Ice");
+                if (!Ice) inst.Add("Hold Ice");
 
                 return inst;
             }
