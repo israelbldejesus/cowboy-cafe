@@ -81,7 +81,7 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// Returns the representationn of this project. 
+        /// Returns the representationn of this project.
         /// </summary>
         /// <returns>The string describing the cowpoke chili.</returns>
         public override string ToString()

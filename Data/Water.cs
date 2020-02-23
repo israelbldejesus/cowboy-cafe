@@ -71,5 +71,14 @@ namespace CowboyCafe.Data
                 return inst;
             }
         }
+
+        /// <summary>
+        /// Returns the representationn of this project.
+        /// </summary>
+        /// <returns>The string describing this class.</returns>
+        public override string ToString()
+        {
+            return "Water";
+        }
     }
 }
