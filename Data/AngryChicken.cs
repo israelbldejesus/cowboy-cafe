@@ -81,7 +81,7 @@ namespace CowboyCafe.Data
         /// <returns>The string describing this class.</returns>
         public override string ToString()
         {
-            return "Angry Chiken";
+            return "Angry Chicken";
         }
     }
 }

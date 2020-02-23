@@ -23,17 +23,17 @@
             <TextBlock>Order</TextBlock>
             <ListView Name="OrderListView"></ListView>
         </StackPanel>
-        <StackPanel Margin="0,0,0,25">
+        <StackPanel Grid.Column="1" Margin="0,0,0,25">
             <TextBlock TextAlignment="Center">Entree</TextBlock>
             <Button x:Name="AddCowpokeChilliButton">Cowpoke Chilli</Button>
             <Button x:Name="AddTrailBurgerButton">Trail Burger</Button>
             <Button x:Name="AddAngryChickenButton">Angry Chicken</Button>
             <Button x:Name="AddDakotaDoubleBurgerButton">Dakota Doube Burger</Button>
-            <Button x:Name="AddRustlersRibs">Rustlers Ribs</Button>
+            <Button x:Name="AddRustlersRibsButton">Rustlers Ribs</Button>
             <Button x:Name="AddPecosPulledPorkButton">Pecos Pulled Pork</Button>
             <Button x:Name="AddTexasTripleBurgerButton">Texas Triple Burger</Button>
         </StackPanel>
-        <StackPanel Grid.Column="1">
+        <StackPanel Grid.Column="2">
             <TextBlock TextAlignment="Center">Sides</TextBlock>
             <Button x:Name="AddPanDeCampoButton">Pan De Campo</Button>
             <Button x:Name="AddBakedBeansButton">Baked Beans</Button>
@@ -43,7 +43,7 @@
             <Button></Button>
             <Button></Button>
         </StackPanel>
-        <StackPanel Grid.Column="2">
+        <StackPanel Grid.Column="3">
             <TextBlock TextAlignment="Center">Drinks</TextBlock>
             <Button x:Name="AddJerkedSodaButton">Jerked Soda</Button>
             <Button x:Name="AddWaterButton">Water</Button>
@@ -52,11 +52,6 @@
             <Button></Button>
             <Button></Button>
             <Button></Button>
-        </StackPanel>
-        <StackPanel Grid.Column="3">
-            <ListView>
-                
-            </ListView>
         </StackPanel>
     </Grid>
 </UserControl>

@@ -68,7 +68,7 @@ namespace CowboyCafe.Data
         /// <returns>The string describing this class.</returns>
         public override string ToString()
         {
-            return "Corn Dogers";
+            return $"{Size.ToString()} Corn Dodgers";
         }
     }
 }

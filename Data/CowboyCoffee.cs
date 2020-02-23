@@ -1,4 +1,16 @@
-﻿using System;
+﻿/*
+
+* Author: Israel B. Lopez De Jesus
+
+* Edited by: Israel B. Lopez De Jesus
+
+* Class name: AngryChicken
+
+* Purpose: Hold the ingredients, price, and calorie of the entree AngryChicken
+
+*/
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -90,9 +102,9 @@ namespace CowboyCafe.Data
         {
             if (Decaf)
             {
-                return $"{Size} Decaf Cowboy Coffee";
+                return $"{Size.ToString()} Decaf Cowboy Coffee";
             }
-            return $"{Size} Cowboy Coffee";
+            return $"{Size.ToString()} Cowboy Coffee";
         }
     }
 }
