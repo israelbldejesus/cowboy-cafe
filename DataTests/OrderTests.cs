@@ -70,7 +70,7 @@ namespace CowboyCafe.DataTests
         }
 
         /// <summary>
-        /// lel
+        /// leeeeel
         /// </summary>
         [Fact]
         public void ItemsShouldContainOnlyTheAddedItems()
