@@ -53,5 +53,8 @@
             <Button></Button>
             <Button></Button>
         </StackPanel>
+        <Border x:Name="Container" Grid.Column="0" Grid.Row="1">
+            <local:MenuItemSelectionControl/>
+        </Border>
     </Grid>
 </UserControl>
