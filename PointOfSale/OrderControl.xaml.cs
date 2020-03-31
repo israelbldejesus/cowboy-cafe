@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿/*
+ * Author: Zachery Brunner
+ * Class: OrderControl.xaml.cs
+ * Purpose: Backend logic for the OrderControl.xaml class
+ */
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using CowboyCafe.Data;
-//using system.ComponentModel;
+
 namespace PointOfSale
 {
     /// <summary>
@@ -18,93 +14,48 @@ namespace PointOfSale
     /// </summary>
     public partial class OrderControl : UserControl
     {
-        /// <summary>
-        /// In here the buttons for adding the entrie will be called. 
-        /// </summary>
         public OrderControl()
         {
+            var o = new Order(1);
+            DataContext = o;
             InitializeComponent();
-            AddCowpokeChilliButton.Click += OnAddCowpokeChilliButtonClick;
-            AddJerkedSodaButton.Click += OnAddJerkedSodaButtonClick;
-            AddChiliCheeseFriesButton.Click += OnAddChiliCheeseFriesButtonClick;
-            AddCornDogersButton.Click += OnAddCornDodgersButtonClick;
-            AddBakedBeansButton.Click += OnAddBakedBeansButtonClick;
-            AddPanDeCampoButton.Click += OnAddPanDeCampoButtonClick;
-            AddTexasTripleBurgerButton.Click += OnAddTexasTripleBurgerButtonClick;
-            AddPecosPulledPorkButton.Click += OnAddPecosPulledPorkButtonClick;
-            AddRustlersRibsButton.Click += OnAddRustlersRibsButtonClick;
-            AddDakotaDoubleBurgerButton.Click += OnAddDakotaDoubleBurgerButtonClick;
-            AddAngryChickenButton.Click += OnAddAngryChickenButtonClick;
-            AddTrailBurgerButton.Click += OnAddTrailBurgerButtonClick;
-            AddCowboyCoffeeButton.Click += OnAddCowboyCoffeeButtonClick;
-            AddTexasTeaButton.Click += OnAddTexasTeaButtonClick;
-            AddWaterButton.Click += OnAddWaterButtonClick;
         }
 
         /// <summary>
-        /// These are all the methods that will add to the order the entries when clicked on the screen.
+        /// Handler that takes care of completing an order
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        void OnAddCowpokeChilliButtonClick(object sender, RoutedEventArgs e)
+        private void CompleteOrderButton_Click(object sender, RoutedEventArgs e)
         {
-            OrderListView.Items.Add(new CowpokeChili());
+            Order o = (Order)DataContext;
+            DataContext = new Order(o.OrderNumber + 1);
         }
-        void OnAddTrailBurgerButtonClick(object sender, RoutedEventArgs e)
+
+        /// <summary>
+        /// Handler that takes care of canceling an order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CancelOrderButton_Click(object sender, RoutedEventArgs e)
         {
-            OrderListView.Items.Add(new TrailBurger());
+            Order o = (Order)DataContext;
+            DataContext = new Order(o.OrderNumber + 1);
         }
-        void OnAddAngryChickenButtonClick(object sender, RoutedEventArgs e)
+
+        /// <summary>
+        /// I do not know what this is suppose to do yet
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ItemSelectionButton_Click(object sender, RoutedEventArgs e)
         {
-            OrderListView.Items.Add(new AngryChicken());
+            Container.Child = new MenuItemSelectionControl();
         }
-        void OnAddDakotaDoubleBurgerButtonClick(object sender, RoutedEventArgs e)
+
+        public void SwapScreen(FrameworkElement element)
         {
-            OrderListView.Items.Add(new DakotaDoubleBurger());
-        }
-        void OnAddRustlersRibsButtonClick(object sender, RoutedEventArgs e)
-        {
-            OrderListView.Items.Add(new RustlersRibs());
-        }
-        void OnAddPecosPulledPorkButtonClick(object sender, RoutedEventArgs e)
-        {
-            OrderListView.Items.Add(new PecosPulledPork());
-        }
-        void OnAddTexasTripleBurgerButtonClick(object sender, RoutedEventArgs e)
-        {
-            OrderListView.Items.Add(new TexasTripleBurger());
-        }
-        void OnAddPanDeCampoButtonClick(object sender, RoutedEventArgs e)
-        {
-            OrderListView.Items.Add(new PanDeCampo());
-        }
-        void OnAddBakedBeansButtonClick(object sender, RoutedEventArgs e)
-        {
-            OrderListView.Items.Add(new BakedBeans());
-        }
-        void OnAddCornDodgersButtonClick(object sender, RoutedEventArgs e)
-        {
-            OrderListView.Items.Add(new CornDodgers());
-        }
-        void OnAddChiliCheeseFriesButtonClick(object sender, RoutedEventArgs e)
-        {
-            OrderListView.Items.Add(new ChiliCheeseFries());
-        }
-        void OnAddJerkedSodaButtonClick(object sender, RoutedEventArgs e)
-        {
-            OrderListView.Items.Add(new JerkedSoda());
-        }
-        void OnAddWaterButtonClick(object sender, RoutedEventArgs e)
-        {
-            OrderListView.Items.Add(new Water());
-        }
-        void OnAddTexasTeaButtonClick(object sender, RoutedEventArgs e)
-        {
-            OrderListView.Items.Add(new TexasTea());
-        }
-        void OnAddCowboyCoffeeButtonClick(object sender, RoutedEventArgs e)
-        {
-            OrderListView.Items.Add(new CowboyCoffee());
+            Container.Child = element;
         }
     }
 }

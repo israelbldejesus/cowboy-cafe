@@ -1,21 +1,24 @@
-﻿using System;
+﻿/* Author: Zachery Brunner
+ * Class: IOrderItem.cs
+ * Purpose: This interface is used to standardize the items that will be ordered
+ */
 using System.Collections.Generic;
-using System.Text;
 
 namespace CowboyCafe.Data
 {
     /// <summary>
-    /// An interface 
+    /// Interface for all items on the cowboy cafe menu
     /// </summary>
     public interface IOrderItem
     {
         /// <summary>
-        /// The price for this order
+        /// Gets the price of the item
         /// </summary>
-        double Price { get; }
+        public double Price { get; }
+
 
         /// <summary>
-        /// The specialninstructions for the order item
+        /// Gets the list of special instructions for the current item
         /// </summary>
         List<string> SpecialInstructions { get; }
     }
