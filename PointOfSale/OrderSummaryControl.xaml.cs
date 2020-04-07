@@ -93,7 +93,7 @@ namespace PointOfSale
                         case "Small Baked Beans":
                             screen = new SideSizeCustomization(DataContext);
                             break;
-                        case "Madium Baked Beans":
+                        case "Medium Baked Beans":
                             screen = new SideSizeCustomization(DataContext);
                             break;
                         case "Large Baked Beans":
